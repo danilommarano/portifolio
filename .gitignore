@@ -31,3 +31,5 @@ nextjs/.env*.local
 # typescript
 nextjs/*.tsbuildinfo
 nextjs/next-env.d.ts
+
+pb/pb_data
