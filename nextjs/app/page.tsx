@@ -1,6 +1,22 @@
+"use client"
+
 import Image from "next/image";
 
+import { useEffect, useState } from "react";
+import { authData } from "@/hooks/pocketbase/pocketbaseClient";
+import { useFetchContent } from "@/hooks/pocketbase/useFetchContent";
+
+interface Content {
+  title: string;
+}
+
 export default function Home() {
+
+  useEffect(() => {
+    authData();
+  }, []);
+
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">

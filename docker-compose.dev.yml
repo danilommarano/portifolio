@@ -9,6 +9,10 @@ services:
       - "3000:3000" 
     volumes:
       - ./nextjs:/app
+    environment:
+      - DATABASE_URL
+      - POCKETBASE_ADMIN_EMAIL
+      - POCKETBASE_ADMIN_PASSWORD
 
   pocketbase:
     build:
