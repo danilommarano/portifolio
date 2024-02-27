@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.env
+
 # dependencies
 nextjs/node_modules
 nextjs/.pnp
@@ -32,4 +34,8 @@ nextjs/.env*.local
 nextjs/*.tsbuildinfo
 nextjs/next-env.d.ts
 
+# icons
+nextjs/icons
+
+# pocketbase data persistence
 pb/pb_data
