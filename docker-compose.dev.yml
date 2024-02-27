@@ -1,0 +1,32 @@
+version: '3.8'
+services:
+
+  next-app:
+    build: 
+      context: ./nextjs # Build context for the Next.js app
+      dockerfile: Dockerfile.dev
+    ports: 
+      - "3000:3000" 
+    volumes:
+      - ./nextjs:/app
+
+  pocketbase:
+    build:
+      context: ./pb
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Expose internal port 8080, map to host port 8090
+    depends_on:
+      - next-app # Assuming your Next.js app might use Pocketbase
+    volumes:
+      - ./pb/pb_data:/pb/pb_data  # For PocketBase data persistence
+
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "80:80" 
+    depends_on:
+      - pocketbase
+      - next-app 
