@@ -15,6 +15,8 @@ import {
 
 import { useEffect, useState } from "react";
 import { authData } from "@/hooks/pocketbase/pocketbaseClient";
+import { Boxes } from "@/components/ui/background-boxes";
+import WordCycler from "@/components/word-cycler";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -105,6 +107,19 @@ export default function Home() {
         </button>
       </Navbar>
 
+      <div className="container flex relative flex-col items-center gap-12 ">
+        <Boxes className="-z-10 fixed" />
+        <section
+          id="first-section"
+          className="flex z-0 fixed justify-center items-center h-[400px] mt-24 w-full overflow-hidden"
+        >
+          <div className="flex flex-col gap-4 items-left text-5xl font-bold">
+            <p>Criando soluções digitais com</p>
+            <WordCycler />
+          </div>
+        </section>
+
+      </div>
 
     </>
   );
