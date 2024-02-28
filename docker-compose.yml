@@ -8,7 +8,7 @@ services:
     ports: 
       - "3000:3000" 
     environment:
-      - DATABASE_URL
+      - BACKEND_URL
       - POCKETBASE_ADMIN_EMAIL
       - POCKETBASE_ADMIN_PASSWORD
 

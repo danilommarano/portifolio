@@ -1,6 +1,7 @@
 import PocketBase from 'pocketbase';
 
-const pb = new PocketBase('http://localhost:8080');
+const BACKEND_URL = process.env.BAKCEND_URL || "http://localhost:8080"
+const pb = new PocketBase(BACKEND_URL);
 
 export const authData = async (): Promise<void> => {
     // Consider using a secrets management service

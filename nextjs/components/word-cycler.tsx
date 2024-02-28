@@ -3,7 +3,7 @@ import { useCollection } from "@/hooks/pocketbase/useCollection";
 
 import Image from "next/image";
 
-const cmsURL = "http://localhost:8080";
+const BACKEND_URL = "http://localhost:8080";
 
 interface Word {
     collectionId: string,
@@ -42,7 +42,7 @@ function WordCycler({ className }: { className?: string }) {
                     width={40}
                     height={40}
                     src={
-                        cmsURL +
+                        BACKEND_URL +
                         "/api/files/" +
                         displayWord?.collectionId +
                         "/" +
