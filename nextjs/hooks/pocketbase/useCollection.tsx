@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import pb from './pocketbaseClient';
+import pb from '@/tools/pocketbaseClient';
 
 // Assuming you have types for your PocketBase data and error
 interface PocketBaseData {
